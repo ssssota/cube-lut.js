@@ -1,6 +1,6 @@
 {
 	"name": "cube-lut.js",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Cube LUT parser and generator.",
 	"type": "module",
 	"types": "dist/index.d.ts",
@@ -19,13 +19,19 @@
 		"type": "git",
 		"url": "git+https://github.com/ssssota/cube-lut.js.git"
 	},
-	"keywords": ["cube", "lut", "color"],
+	"keywords": [
+		"cube",
+		"lut",
+		"color"
+	],
 	"author": "TOMIKAWA Sotaro <tommysouta@gmail.com>",
 	"license": "MIT",
 	"bugs": {
 		"url": "https://github.com/ssssota/cube-lut.js/issues"
 	},
-	"files": ["dist"],
+	"files": [
+		"dist"
+	],
 	"homepage": "https://github.com/ssssota/cube-lut.js#readme",
 	"packageManager": "pnpm@8.8.0",
 	"devDependencies": {
