@@ -1,0 +1,38 @@
+{
+	"name": "cube-lut.js",
+	"version": "1.0.0",
+	"description": "Cube LUT parser and generator.",
+	"type": "module",
+	"types": "dist/index.d.ts",
+	"main": "dist/index.js",
+	"scripts": {
+		"build": "tsc",
+		"test": "vitest run",
+		"vitest": "vitest",
+		"coverage": "vitest run --coverage",
+		"fmt": "biome format --write . && biome lint --apply .",
+		"check": "biome format . && biome lint .",
+		"changeset": "changeset",
+		"release": "pnpm build && pnpm changeset publish"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/ssssota/cube-lut.js.git"
+	},
+	"keywords": ["cube", "lut", "color"],
+	"author": "TOMIKAWA Sotaro <tommysouta@gmail.com>",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/ssssota/cube-lut.js/issues"
+	},
+	"homepage": "https://github.com/ssssota/cube-lut.js#readme",
+	"packageManager": "pnpm@8.8.0",
+	"devDependencies": {
+		"@biomejs/biome": "^1.2.2",
+		"@changesets/changelog-github": "^0.4.8",
+		"@changesets/cli": "^2.26.2",
+		"@vitest/coverage-v8": "^0.34.3",
+		"typescript": "^5.2.2",
+		"vitest": "^0.34.6"
+	}
+}
