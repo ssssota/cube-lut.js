@@ -81,8 +81,7 @@ it("should parse a LUT(3D)", () => {
 	const { size, type, domain, data } = parse(`\
 TITLE "Hello"
 LUT_3D_SIZE 2
-DOMAIN_MIN 0 0 0
-DOMAIN_MAX 1 1 1
+LUT_3D_INPUT_RANGE 0 1
 # Comment
 0 0 0
 1 0 0

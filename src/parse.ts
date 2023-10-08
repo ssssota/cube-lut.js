@@ -20,6 +20,9 @@ const domainMinRegex = new RegExp(
 const domainMaxRegex = new RegExp(
 	`^${SP0}DOMAIN_MAX${SP}(${NUM})${SP}(${NUM})${SP}(${NUM})${SP0}$`,
 );
+const inputRangeRegex = new RegExp(
+	`^${SP0}LUT_[13]D_INPUT_RANGE${SP}(${NUM})${SP}(${NUM})${SP0}$`,
+);
 const rgbRegex = new RegExp(`^${SP0}(${NUM})${SP}(${NUM})${SP}(${NUM})${SP0}$`);
 const lut1dRegex = new RegExp(`^${SP0}LUT_1D_SIZE${SP}(\\d+)${SP0}$`);
 const lut3dRegex = new RegExp(`^${SP0}LUT_3D_SIZE${SP}(\\d+)${SP0}$`);
@@ -69,6 +72,14 @@ export const parse = (
 					flags.type = true;
 					lut.type = "3D";
 					lut.size = Number(lut3dMatch[1]);
+					return lut;
+				}
+				const inputRangeMatch = ln.match(inputRangeRegex);
+				if (inputRangeMatch) {
+					const min = Number(inputRangeMatch[1]);
+					const max = Number(inputRangeMatch[2]);
+					lut.domain.min = [min, min, min];
+					lut.domain.max = [max, max, max];
 					return lut;
 				}
 				const domainMinMatch = ln.match(domainMinRegex);

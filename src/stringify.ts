@@ -11,6 +11,16 @@ export const stringify = (lut: Lut): string => {
 	if (lut.type === "3D") {
 		lines.push(`LUT_3D_SIZE ${lut.size}`);
 	}
+	if (
+		lut.domain.min[0] === lut.domain.min[1] &&
+		lut.domain.min[0] === lut.domain.min[2] &&
+		lut.domain.max[0] === lut.domain.max[1] &&
+		lut.domain.max[0] === lut.domain.max[2]
+	) {
+		lines.push(
+			`LUT_${lut.type}_INPUT_RANGE ${lut.domain.min[0]} ${lut.domain.max[0]}`,
+		);
+	}
 	lines.push(
 		`DOMAIN_MIN ${lut.domain.min[0]} ${lut.domain.min[1]} ${lut.domain.min[2]}`,
 	);
