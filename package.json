@@ -33,7 +33,7 @@
 		"dist"
 	],
 	"homepage": "https://github.com/ssssota/cube-lut.js#readme",
-	"packageManager": "pnpm@8.8.0",
+	"packageManager": "pnpm@8.9.0",
 	"devDependencies": {
 		"@biomejs/biome": "^1.2.2",
 		"@changesets/changelog-github": "^0.4.8",
